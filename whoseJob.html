@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #changeBtn{
+            background-color: blue;
+            color: white;
+            padding: 10px;  
+            border-radius: 10px;
+        }
+
+        .box{
+            background-color: black;
+            color: white;
+            width: 200px;
+            /* height: 200px; */
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 10px;
+            font-size: 50px;
+        }
+
+        .opposite{
+            background-color: white;
+            color: black;
+        }
+
+        body{
+            background-color: gray;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <p>YES</p>
+    </div>
+    <br>
+    <button id="changeBtn">Make Opposite</button>
+
+    <script>
+        let box = document.querySelector(".box");
+        let text =  box.children[0];
+        let body = document.body;
+
+        document.getElementById("changeBtn").addEventListener("click", function(){
+            // //html change with js
+            // box.children[0].innerText = "NO";
+            if (text.innerText == "YES"){
+                text.innerText = "NO"
+            }else{
+                text.innerText = "YES"
+            }
+
+
+            // //css change with Js
+            // box.style.backgroundColor = "white";
+            // box.style.color = "black";
+            box.classList.toggle("opposite")
+            
+
+
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 150px;
+        }
+
+        .detectArea{
+            height: 200px;
+            width: 300px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="./off.jpg" alt="" id="offBulb">
+
+    <br> <br> <br> <br>
+    <div>
+        <button onclick=onBulb()>Light On</button>
+        <br>
+        <button onclick=offBulb()>Light Off</button>
+    </div>
+    <hr>
+    <div>
+        <button onclick="toggleSwitch()">toggleSwitch</button>
+    </div>
+    <hr>
+    <div>
+        <button onclick="toggleSwitch()">Switch1</button>
+        <button onclick="toggleSwitch()">Switch2</button>
+    </div>
+    <hr>
+    <div class="detectArea">detectArea</div>
+    
+    <script>
+        let bulb = document.getElementById("offBulb");
+
+        function offBulb(){
+            bulb.setAttribute("src","off.jpg")
+        }
+
+        function onBulb(){
+            bulb.setAttribute("src","on.jpg")
+        }
+
+        function toggleSwitch(){
+            if ( bulb.getAttribute ("src") == "off.jpg" ){
+                onBulb();
+            }else{
+                offBulb();
+            }
+        }
+
+        document.querySelector(".detectArea").addEventListener("mouseenter",function(){
+            onBulb();
+            setTimeout(offBulb,3000)
+        })
+
+
+    </script>
+
+
+
+</body>
+</html>
